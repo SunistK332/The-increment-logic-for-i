@@ -82,12 +82,12 @@ int main(){
         int j = 1;
         int back  = j++;
         int front = ++j;
-        printf("%d %d\n", back, front);
-        printf("Not directly call printf func, back = j++, front = ++j.\n");
-
         // 这里，两个自增操作是分别放在两条独立的声明语句中的；
         // 每条语句末尾都有一个序列点（这里为分号）。
         // 两个自增被序列点明确隔开，顺序确定。
+        printf("%d %d\n", back, front);
+        printf("Not directly call printf func, back = j++, front = ++j.\n");
+
 }
 ```
 Arch_Linux, Linux 7.0.14-arch1-1，GCC 16 的运行结果：
@@ -125,7 +125,6 @@ int main(){
         // 如果我们的编译指令中有写 -Wall，那么，这时编译器会报出 未定义 的警告！
 
         printf("Directly call printf func, i++ and ++i are inside.\n");
-        return 0;
 
 }
 ```
